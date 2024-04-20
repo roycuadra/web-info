@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Command Line Reference</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 3px 5px;
+            border-radius: 3px;
+        }
+        .caution {
+            color: red;
+            font-weight: bold;
+        }
+        .external {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h1>Windows Command Line Reference</h1>
+
+    <h2>System File Repair</h2>
+    <ul>
+        <li><code>sfc /scannow</code>: Scans and repairs corrupted Windows system files.</li>
+    </ul>
+
+    <h2>Disk Checking</h2>
+    <ul>
+        <li><code>chkdsk /f</code> <span class="caution">(Caution: Back up data first)</span>: Checks and fixes disk errors.</li>
+        <li><code>chkdsk</code>: Checks for disk errors (read-only).</li>
+    </ul>
+
+    <h2>System Image Repair</h2>
+    <ul>
+        <li><code>DISM/Online /Cleanup-Image /CheckHealth</code>: Checks the integrity of Windows system files.</li>
+    </ul>
+
+    <h2>System Tools</h2>
+    <ul>
+        <li><code>sysdm.cpl</code>: Opens System Properties for configuration.</li>
+        <li><code>ncpa.cpl</code>: Opens Network Connections for managing networks.</li>
+        <li><code>msinfo32</code>: Shows detailed system information.</li>
+        <li><code>winget upgrade --all</code> (Win10 v1809+): Upgrades all apps installed via <code>winget</code> package manager.</li>
+        <li><code>slmgr /rearm</code> <span class="caution">(Use with discretion: Licensing terms apply)</span>: Resets Windows activation timer (for major hardware changes).</li>
+        <!-- Add the following section for Wi-Fi network names and passwords -->
+        <li><strong>View Saved Wi-Fi Network Names and Passwords:</strong></li>
+        <li><code>netsh wlan show profiles</code>: Lists all saved Wi-Fi network profiles.</li>
+        <li><code>netsh wlan show profile name="WiFiNetworkName" key=clear</code>: Shows password for a specific Wi-Fi network.</li>
+    </ul>
+
+    <h2>Disk Cleanup</h2>
+    <ul>
+        <li><code>cleanmgr</code>: Frees up disk space by deleting temporary files.</li>
+    </ul>
+
+    <h2>Other</h2>
+    <ul>
+        <li><code>netplwiz</code>: Manages user accounts on your system.</li>
+        <li><code>wsreset</code>: Resets the Windows Store cache (for troubleshooting Store issues).</li>
+    </ul>
+
+    <h2>Diagnostics (Use with Caution)</h2>
+    <ul>
+        <li><code>dxdiag</code>: Provides information about graphics, sound, and input devices.</li>
+        <li><code>memtest86.com</code> (External): Tests your computer's memory for errors <span class="caution">(use cautiously)</span>.</li>
+    </ul>
+
+    <h2>External Tools (Use at Your Own Risk)</h2>
+    <ul>
+        <li><code>deadpixeltest.org</code> (Website): Helps identify dead pixels on your monitor.</li>
+        <li><code>keyboardtester.com</code> (Website): Tests your keyboard for proper functionality.</li>
+        <li><code>furmark</code> (External): Performs a demanding graphics stress test <span class="caution">(can damage hardware if not careful)</span>.</li>
+    </ul>
+
+    <h2>Network Troubleshooting</h2>
+    <ul>
+        <li><code>tracert google.com</code>: Traces the route packets take to reach a website.</li>
+        <li><code>nslookup www.google.com</code>: Looks up a website's IP address.</li>
+    </ul>
+</body>
+</html>
